@@ -1,6 +1,6 @@
 
 
-var redirect_url = "http://localhost:8080/";
+var redirect_url = "https://harsha154.github.io/Spotify-Visualizer/";
 //var redirect_url = "https://h4rsha.com/";
 
 
