@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="app.css">
+        <title>Visualizer</title>
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="app.js">
+    </script>
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body onload="onPageLoad()">
+        <div id="tokenSection">
+            <div>
+                
+                <input class="btn btn-primary btn-lg" type="button" onclick="requestAuthorization()" value="LOGIN"><br/>
+
+            </div>  
+    </div>
+    <div id="deviceSection" class="row">
+        <div class="col">
+            <div class="mb-3">
+                <label for="devices" class="form-label">Devices</label>
+                <select id="devices" class="form-control"></select>
+                <input class="btn btn-primary btn-sm mt-3" type="button" onclick="refreshDevices()" value="Refresh Devices">
+            </div>
+        </div>
+    </div>   
+    <div class="row  mt-3">
+        <div class="col">
+            <h1 style="text-align:center;font-size:60px;font-family :'Niconne', cursive;" class="text text-1"> HARSHA's VISUALIZER </h1>
+            <h1 style="text-align:center;font-size:25px;font-family :'Niconne', cursive;" class="text text-1"> Log in and start playing music on Spotify from your devices</h1>
+            <h2 style="font-size:20px;font-family :'Niconne', cursive;" class="text text-1"> **When changing tracks, first hit REFRESH PLAYER and then hit REFRESH VISUALIZER. </h2>
+
+
+            <button class="glow-on-hover"  onclick="currentlyPlaying()" value="Refresh"></button>     <button class="glow-on-hover2"  onclick="window.location.reload()" value="Analyze"></button>
+                
+                
+                <div class="image">
+                <img id="albumImage" alt="">
+                </div>
+                <div id="display" style="text-align:center;font-size:60px;color: navy; font-family:courier,arial,helvetica;" ></div>
+                <div id="trackTitle"></div> 
+                <div id="trackArtist"></div>
+                <div id="trackID" ></div>  
+                <div id="progress_ms" ></div>  
+                <div id="segments"></div>
+                <div id="bars"></div>
+                <div id="beats"></div>
+                <div id="sections"></div>
+                <div id="tatums"></div>
+                
+                <table call= "container" style="width:70%;text-align:center;font-size:20px" class="center">
+
+                    <tr>
+                    <th style=text-align:center;font-size:25px;font-family:Luminari,fantasy>Audio Feature</th>
+                    <th style=text-align:center;font-size:25px;font-family:Luminari,fantasy>Value</th>
+                    <th style=text-align:center;font-size:25px;font-family:Luminari,fantasy>Description</th>
+                    </tr>
+                    <tr>
+                    <td>Acousticness</td>
+                    <td id="acousticness"></td>
+                    <td>A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.</td>
+                    </tr>
+                        <td>Danceability</td>
+                        <td id="danceability"></td>
+                        <td> Describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.        </td>
+                    </tr>
+                    </tr>
+                        <td>Duration</td>
+                        <td id="duration_ms"></td>
+                        <td>Duration in milliseconds</td>
+                    </tr>
+                    </tr>
+                        <td>Energy</td>
+                        <td id="energy"></td>
+                        <td>Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy.</td>
+                    </tr>
+                    </tr>
+                        <td>Instrumentalness</td>
+                        <td id="instrumentalness"></td>
+                        <td>Predicts whether a track contains no vocals. The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.</td>
+                    </tr>
+                    
+                    </tr>
+                        <td>Liveness</td>
+                        <td id="liveness"></td>
+                        <td>Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live.</td>
+                    </tr>
+                    </tr>
+                        <td>Loudness</td>
+                        <td id="loudness"></td>
+                        <td>The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track. Values typical range between -60 and 0 db.</td>
+                    </tr>
+                    
+                    </tr>
+                        <td>Speechiness</td>
+                        <td id="speechiness"></td>
+                        <td>Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value.</td>                    </tr>
+                    </tr>
+                        <td>Tempo</td>
+                        <td id="tempo"></td>
+                        <td>The overall estimated tempo of a track in beats per minute (BPM)</td>
+                    </tr>
+                    </tr>
+                        <td>Valence</td>
+                        <td id="valence"></td>
+                        <td>A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).</td>
+                    </tr>
+                    
+                </table>
+
+        
+                
+       <!-- 
+        </div>
+        <button class="glow-on-hover2"  onclick="AudioAnalysis()" value="Analyze"></button>
+        <button type="button" class="btn btn-warning"  onclick="SegmentTimes()">Segment Times</button>
+        <button type="button" class="btn btn-warning"  onclick="BarTimes()">Bar Times</button>
+        <button type="button" class="btn btn-warning"  onclick="BeatTimes()">Beat Times</button>
+        <button type="button" class="btn btn-warning"  onclick="SectionsTimes()">Section Times</button>
+        <button type="button" class="btn btn-warning"  onclick="TantumTimes()">Tantum Times</button>
+        
+           -->
+           <h4 id="display"></h4>
+    </div>
+    <canvas id="myCanvas" style="border:1px solid #000000" class="canvas" >
+
+    </canvas>
+    
+        <p>
+            <a href="page2.html" target="_self" style="font-size:50px;font-family:Luminari,fantasy"> Click me to learn how it works</a>
+            
+    
+    
+</p>
+</body>
+
+</html>
+
+
+
+
+

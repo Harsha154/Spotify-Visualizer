@@ -1,0 +1,83 @@
+<html>
+    <link rel="stylesheet" href="app.css">
+    <div style="font-size:80px;font-family:Luminari,fantasy;text-align:center;">How it works</div>
+    <div style="font-size:25px; line-height:40px;text-align:center"> Spotify analyzes the content on its platform to accurately capture the listening habits and preferences of its users.
+        This program can use data gathered by the Spotify API to display and create unique visualizers for specific tracks. This app can access, share, and use audio features from Spotify to create fun visualizers.
+    
+    </div>
+    <div style="font-size:35px;font-family:Luminari,fantasy">Audio features:</div>
+    <div style="font-size:25px;">The audio features communicate the subjective listening experience of tracks to the Spotify algorithm. It turns elements of songs such as happiness, energy, and vocal presence into numerical values. These values can gather and predict the taste and mood of Spotify users.
+    </div>
+    
+    <div style="font-size:40px;font-family:Luminari,fantasy">Visualizer:</div>
+    <div style="font-size:25px;"> All songs on Spotify are divided into four categories depending on their valence and energy values. </div>
+    <br>
+    <table call= "container" style="width:100%;text-align:center;font-size:20px" class="center">
+        <tr>
+            <th style=text-align:center;font-size:25px;font-family:Luminari,fantasy>Name</th>
+            <th style=text-align:center;font-size:25px;font-family:Luminari,fantasy>Image</th>
+            <th style=text-align:center;font-size:25px;font-family:Luminari,fantasy>Description</th>
+            <th style=text-align:center;font-size:25px;font-family:Luminari,fantasy>Songs to try</th>
+            </tr>
+            <tr>
+                <td style="font-size:35px;font-family:Luminari,fantasy"> Dance Floor</td>
+                <td><img src="img/group1.jpg" alt="Dance Floor" style="width:400px;height:248px;" ></td>
+                <td style="font-size:18px; line-height:35px">Songs with energy values greater than 0.750 and valence greater than 0.500 belong to this group. This group typically includes tracks made for dancing. 
+                    The program uses <b style="font-size:20px;"> danceability, valence, and tempo</b> vvalues to create and display the visualizer. The danceability value determines the speed of color change; higher values increase speed. 
+                    The valence value determines the brightness of the colors; higher values increase brightness. The tempo controls the number of tiles; a higher tempo creates more tiles in the visualizer.</td>
+                   <td style="font-size:20px;"> <ul>
+                    <li>24K by Bruno Mars</li>
+                    <li>don't be afraid by Knxwledge</li>
+                    <li>Down by St. Vincent</li>
+                    <li>Don't Start Now by Dua Lipa</li>
+                   </ul> 
+            </tr>
+            <tr>
+                <td style="font-size:35px;font-family:Luminari,fantasy"> Energy Source</td>
+                <td><img src="img/energysource.jpg" alt="Energy Source" style="width:400px;height:248px;" ></td>
+                <td style="font-size:18px; line-height:35px">Songs with energy values lower than 0.750 and valence greater than 0.500 belong to this group. This group typically includes RnB and other relaxing and happy music. 
+                    The program uses <b style="font-size:20px;">energy, danceability,  and tempo</b> values to create and display this visualizer. The energy value controls the size of the source; higher energy creates a brighter source. 
+                    The danceability value dictates the speed of color change; higher danceability faster color change.
+                    The tempo determines the frequency of the pulsing; a higher tempo causes faster energy waves.</td>
+                   <td style="font-size:20px;"> <ul>
+                    <li>Waiting by Deniece Willaims</li>
+                    <li>The Less I Know The Better by Tame Impala</li>
+                    <li>Ever Again by Robyn,</li>
+                    <li>Believe In God by J Dilla</li>
+                   </ul> 
+            </tr>
+            <tr>
+                <td style="font-size:35px;font-family:Luminari,fantasy"> Spinning Orbs</td>
+                <td><img src="img/orb.jpg" alt="Spinning Disco" style="width:400px;height:248px;" ></td>
+                <td style="font-size:18px;line-height:35px;">Songs with energy values greater than 0.500 and valence lower than 0.500 belong to this group. This group contains a mix of hip hop, RnB, indie rock, and other energetic but dark songs. 
+                    The program uses <b style="font-size:20px;">energy, danceability, valence and tempo</b> values to create and display this visualizer. The energy value determines the size of the orbs; higher energy creates larger orbs. 
+                    The danceability value determines the frequency of the orbs' expansion. Higher danceability leads to faster expansion and contraction.
+             The valence number determines the brightness of the dots that make up the orb; higher valence creates a brighter visualizer. 
+                    The tempo determines the speed of the bots' swinging; higher tempo leads to faster pendulations. In addition, the tempo value assigns different songs with different colored visualizers.</td>
+                   <td style="font-size:20px;"> <ul>
+                    <li>Under Your Spell by Desire</li>
+                    <li>Imperfect Circle by Jorja Smith</li>
+                    <li>Lover Ghost by Anna of the North</li>
+                    <li>The Chain by Fleetwood Mac</li>
+                  
+                   </ul> 
+            </tr>
+            <tr>
+                <td style="font-size:35px;font-family:Luminari,fantasy"> Floating Bubbles</td>
+                <td><img src="img/bubbles.jpg" alt="Floating Bubbles" style="width:400px;height:248px;" ></td>
+                <td style="font-size:18px;line-height:35px;">Songs with energy values lower than 0.500 and valence lower than 0.500 belong to this group. This group contains melancholy, slow, and relaxing music as well as some trap, heavy metal, dark music. 
+                    The program uses <b style="font-size:20x;">energy, danceability, valence and tempo</b> values to create and display this visualizer. The energy value controls the brightness of the bubbles; higher energy causes the outlines of the bubbles to be brighter. 
+                    The danceability value determines the colors; higher danceability leads to more colorful bubbles. The valence number determines the size of the bubbles; higher valence creates larger bubbles. 
+                    The tempo determines the number of bubbles; higher tempo leads to more bubbles</td>
+                   <td style="font-size:20px;"> <ul>
+                    <li>Something About Us by Daft Punk</li>
+                    <li>Limit To Your Love by James Blake</li>
+                    <li>The Void by Kid Cudi</li>
+                    <li>Olympus by Sufjan Stevens</li>
+                   </ul> 
+            </tr>
+
+    </table>
+    
+    
+</html>
