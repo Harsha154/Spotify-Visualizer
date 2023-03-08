@@ -252,7 +252,6 @@ function handleCurrentlyPlayingResponse(){
 }
 }
 
-/*
 
 function getPlaybackState(){
     spotifyApi.getMyCurrentPlaybackState({}).then(
