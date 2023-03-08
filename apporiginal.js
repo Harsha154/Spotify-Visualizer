@@ -532,7 +532,6 @@ function TantumStartTimes(){
     }
     
 }
-*/
 function draw() {
     const canvas = document.getElementById('myCanvas');
     const cntx = canvas.getContext('2d');
